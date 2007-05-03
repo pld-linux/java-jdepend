@@ -62,8 +62,6 @@ Dokumentacja do JDepend.
 %setup -q
 
 %build
-export JAVA_HOME="%{java_home}"
-
 %ant jar javadoc
 
 %install
