@@ -2,7 +2,7 @@ Summary:	JDepend utility
 Summary(pl.UTF-8):	Narzędzie JDepend
 Name:		jdepend
 Version:	2.9
-Release:	1
+Release:	2
 License:	BSD
 Group:		Development/Languages/Java
 Source0:	http://www.clarkware.com/software/%{name}-%{version}.zip
