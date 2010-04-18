@@ -1,18 +1,21 @@
+#
+%define		pkgname	jdepend
+#
 Summary:	JDepend utility
 Summary(pl.UTF-8):	Narzędzie JDepend
-Name:		jdepend
+Name:		java-%{pkgname}
 Version:	2.9
-Release:	3
+Release:	1
 License:	BSD
 Group:		Development/Languages/Java
-Source0:	http://www.clarkware.com/software/%{name}-%{version}.zip
+Source0:	http://www.clarkware.com/software/%{pkgname}-%{version}.zip
 # Source0-md5:	4e979c0dda766ba1dd719905ca975c7b
 URL:		http://www.clarkware.com/software/JDepend.html
 BuildRequires:	jpackage-utils
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	jpackage-utils
+Obsoletes:	%{jdepend}
 BuildArch:	noarch
-ExclusiveArch:	i586 i686 pentium3 pentium4 athlon %{x8664} noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -60,7 +63,7 @@ Documentation for JDepend.
 Dokumentacja do JDepend.
 
 %prep
-%setup -q
+%setup -qn %{pkgname}-%{version}
 
 %build
 %ant jar javadoc
@@ -69,18 +72,18 @@ Dokumentacja do JDepend.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_javadir}
 
-cp -a dist/%{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/%{name}-%{version}.jar
-ln -s %{name}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/%{name}.jar
+cp -a dist/%{pkgname}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/%{pkgname}-%{version}.jar
+ln -s %{pkgname}-%{version}.jar $RPM_BUILD_ROOT%{_javadir}/%{pkgname}.jar
 
-install -d $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
-cp -a build/docs/api/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}-%{version}
-ln -s %{name}-%{version} $RPM_BUILD_ROOT%{_javadocdir}/%{name}
+install -d $RPM_BUILD_ROOT%{_javadocdir}/%{pkgname}-%{version}
+cp -a build/docs/api/* $RPM_BUILD_ROOT%{_javadocdir}/%{pkgname}-%{version}
+ln -s %{pkgname}-%{version} $RPM_BUILD_ROOT%{_javadocdir}/%{pkgname}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post javadoc
-ln -sf %{name}-%{version} %{_javadocdir}/%{name}
+ln -sf %{pkgname}-%{version} %{_javadocdir}/%{pkgname}
 
 %files
 %defattr(644,root,root,755)
@@ -93,5 +96,5 @@ ln -sf %{name}-%{version} %{_javadocdir}/%{name}
 
 %files javadoc
 %defattr(644,root,root,755)
-%{_javadocdir}/%{name}-%{version}
-%ghost %{_javadocdir}/%{name}
+%{_javadocdir}/%{pkgname}-%{version}
+%ghost %{_javadocdir}/%{pkgname}
