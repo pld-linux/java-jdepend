@@ -5,7 +5,7 @@ Summary:	JDepend utility
 Summary(pl.UTF-8):	Narzędzie JDepend
 Name:		java-%{pkgname}
 Version:	2.9
-Release:	1
+Release:	2
 License:	BSD
 Group:		Development/Languages/Java
 Source0:	http://www.clarkware.com/software/%{pkgname}-%{version}.zip
@@ -14,7 +14,7 @@ URL:		http://www.clarkware.com/software/JDepend.html
 BuildRequires:	jpackage-utils
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	jpackage-utils
-Obsoletes:	%{jdepend}
+Obsoletes:	jdepend
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -37,6 +37,7 @@ Summary(fr.UTF-8):	Documentation pour JDepend
 Summary(it.UTF-8):	Documentazione di JDepend
 Summary(pl.UTF-8):	Dokumentacja do JDepend
 Group:		Documentation
+Obsoletes:	jdepend-doc
 
 %description doc
 JDepend documentation.
@@ -55,6 +56,7 @@ Summary:	Online manual for JDepend
 Summary(pl.UTF-8):	Dokumentacja online do JDepend
 Group:		Documentation
 Requires:	jpackage-utils
+Obsoletes:	jdepend-javadoc
 
 %description javadoc
 Documentation for JDepend.
