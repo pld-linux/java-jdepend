@@ -13,6 +13,7 @@ Source0:	http://www.clarkware.com/software/%{pkgname}-%{version}.zip
 URL:		http://www.clarkware.com/software/JDepend.html
 BuildRequires:	jpackage-utils
 BuildRequires:	rpmbuild(macros) >= 1.300
+BuildRequires:	unzip
 Requires:	jpackage-utils
 Obsoletes:	jdepend
 BuildArch:	noarch
