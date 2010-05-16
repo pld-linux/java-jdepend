@@ -11,6 +11,8 @@ Group:		Development/Languages/Java
 Source0:	http://www.clarkware.com/software/%{pkgname}-%{version}.zip
 # Source0-md5:	4e979c0dda766ba1dd719905ca975c7b
 URL:		http://www.clarkware.com/software/JDepend.html
+BuildRequires:	ant
+%buildrequires_jdk
 BuildRequires:	jpackage-utils
 BuildRequires:	rpmbuild(macros) >= 1.300
 BuildRequires:	unzip
